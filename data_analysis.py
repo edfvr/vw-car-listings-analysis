@@ -24,12 +24,12 @@ with open("vw.csv", "r") as csvfile:
             golf_models.append(car)
     print(f"Number of Golfs = {len(golf_models)}")
 
-    golf_prices = [float(car.price) for car in golf_models]
-    print(f"Sum of Golf Prices = {sum(golf_prices)}")
+    golf_prices = [int(car.price) for car in golf_models]
+    print(f"Sum of Golf Prices = {sum(golf_prices):.2f}")
 
     average_golf_price = sum(golf_prices) / len(golf_prices)
 
-    print(f"The average price for VW Golfs is {round(average_golf_price, 2)}")
+    print(f"The average price for VW Golfs is {average_golf_price:.2f}")
 
 #------------------Average mileage for Polos------------------------
     y2020_polo_models = []
@@ -38,3 +38,10 @@ with open("vw.csv", "r") as csvfile:
         if car.model == 'Polo' and car.year == '2020':
             y2020_polo_models.append(car)
     print(f"Number of 2020 Polo models = {len(y2020_polo_models)}")
+
+    polo_mileages = [int(car.mileage) for car in y2020_polo_models]
+    print(f"Sum of Polo mileages = {sum(polo_mileages)}")
+
+    average_polo_mileage = sum(polo_mileages) / len(polo_mileages)
+
+    print(f"The average mileage for Polos is {average_polo_mileage:.2f}")
